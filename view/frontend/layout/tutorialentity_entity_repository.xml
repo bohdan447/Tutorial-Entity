@@ -12,6 +12,18 @@
                     <argument name="view_model" xsi:type="object">Perspective\TutorialEntity\ViewModel\Custom</argument>
                 </arguments>
             </block>
+            <block class="Magento\Framework\View\Element\Template" name="ProductInfo" template="Perspective_TutorialEntity::InfoProduct.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\ProductInfo</argument>
+                    <argument name="customerViewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\CustomerList</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="category_list" template="Perspective_TutorialEntity::AllCategory.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Perspective\TutorialEntity\ViewModel\Categories</argument>
+                </arguments>
+            </block>
         </referenceContainer>
+
     </body>
 </page>

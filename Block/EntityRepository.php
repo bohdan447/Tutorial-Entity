@@ -3,6 +3,8 @@
 namespace Perspective\TutorialEntity\Block;
 
 use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Framework\ObjectManagerInterface;
+
 
 class EntityRepository extends \Magento\Framework\View\Element\Template
 {
@@ -24,7 +26,7 @@ class EntityRepository extends \Magento\Framework\View\Element\Template
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
+        \Magento\Catalog\Api\ProductRepositoryInterface  $productRepository,
         \Magento\Framework\Api\SearchCriteriaBuilder     $searchCriteriaBuilder,
         array                                            $data = []
     )
@@ -46,6 +48,7 @@ class EntityRepository extends \Magento\Framework\View\Element\Template
         return $productModel;
     }
 
+
     public function getCheapProducts($price)
     {
         if (is_null($price)) {
@@ -66,5 +69,4 @@ class EntityRepository extends \Magento\Framework\View\Element\Template
 
         return $productCollection->getItems();
     }
-
 }

@@ -1,0 +1,25 @@
+<?php
+/** @var \Perspective\TutorialEntity\ViewModel\ProductInfo $viewModel */
+$viewModel = $block->getData('viewModel');
+$customerCollection = $block->getData('customerViewModel')->getCustomers();
+$productsInfo = $viewModel->getProductsInfo('t', 10, 100); // Пошук продуктів, імена яких починаються на "L" і ціна в діапазоні від 10 до 100
+
+?>
+
+<div>
+    <?php foreach ($productsInfo as $product): ?>
+        <div>
+            Назва: <?php echo $product['name']; ?>
+            Ціна: <?php echo $product['price']; ?>
+        </div>
+    <?php endforeach; ?>
+    <?php foreach ($customerCollection as $customer): ?>
+        <div>
+            <hr/>
+            <?= __('First Name: %1', $customer->getFirstname()) ?><br/>
+            <?= __('Last Name: %1', $customer->getLastname()) ?><br/>
+            <?= __('Email: %1', $customer->getEmail()) ?>
+
+        </div>
+    <?php endforeach; ?>
+</div>

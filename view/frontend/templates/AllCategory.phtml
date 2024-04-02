@@ -1,0 +1,16 @@
+<?php
+/** @var Categories $viewModel */
+
+use Perspective\TutorialEntity\ViewModel\Categories;
+
+$viewModel = $block->getData('view_model');
+$categories = $viewModel->getCategoryList();
+
+if (!empty($categories)) {
+    foreach ($categories as $category) {
+        echo $category->getid() . "<br>         ";
+        echo $category->getName(). " <br>       <hr> ID --  ";
+    }
+} else {
+    echo "No categories found.";
+}
