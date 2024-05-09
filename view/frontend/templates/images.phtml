@@ -1,0 +1,16 @@
+<?php $viewModel = $block->getData('img') ?>
+<?php $product = $viewModel->getProduct(4) ?>
+<?php $imageData = $viewModel->getProductImageUrl(4) ?>
+<?php if (!empty($imageData)) : ?>
+    <hr>
+    <h3>
+       Image for product: <?= $product->getName() ?>
+    </h3>
+    <div>
+        <img src="<?= $imageData['url'] ?>"/>
+        <h3> Height: <?= $imageData['height'] ?></h3>
+        <h3> Width: <?= $imageData['width'] ?></h3>
+    </div>
+
+
+<?php endif; ?>

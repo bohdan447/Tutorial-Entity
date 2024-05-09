@@ -1,0 +1,15 @@
+<?php
+/** @var \Perspective\TutorialEntity\ViewModel\ShippingMethods $viewModel */
+$allShipping = $block->getData('viewModel')->getShippingMethods();
+?>
+<hr  name="shipping" class="control-select">
+    <?php foreach ($allShipping as $carrier): ?>
+        <optgroup label="<?php /* @escapeNotVerified */ echo $carrier['label'] ?>">
+            <?php foreach ($carrier['value'] as $child): ?>
+                <option value="<?php /* @escapeNotVerified */ echo $child['value'] ?>">
+                    <?php /* @escapeNotVerified */ echo $child['label']; ?>
+                </option>
+            <?php endforeach; ?>
+        </optgroup>
+    <?php endforeach; ?>
+</hr>

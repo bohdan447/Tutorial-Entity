@@ -1,0 +1,9 @@
+<?php $productId = 2041;  ?>
+<?php $stockViewModel = $block->getData('Qty'); ?>
+
+<hr><p>Ім'я товару: <?php echo $stockViewModel->getProductNameById($productId); ?></p>
+<p>Кількість товару на складі: <?php echo $stockViewModel->getStockQty($productId); ?></p>
+<p>Мінімальна кількість для замовлення: <?php echo $stockViewModel->getMinQty($productId); ?></p>
+<p>Мінімальна кількість для продажу: <?php echo $stockViewModel->getMinSaleQty($productId); ?></p>
+<p>Максимальна кількість для продажу: <?php echo $stockViewModel->getMaxSaleQty($productId); ?></p>
+<p>Товар в наявності: <?php echo $stockViewModel->isInStock($productId) ? 'Так' : 'Ні'; ?></p><hr>

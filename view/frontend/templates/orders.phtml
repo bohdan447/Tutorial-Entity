@@ -1,0 +1,14 @@
+<?php
+/** @var \Perspective\TutorialEntity\ViewModel\Orders $viewModel */
+$viewModel = $block->getData('viewModel');
+$orderCollection = $viewModel->getOrderCollection();
+
+
+foreach ($orderCollection as $order) {
+    echo "Order ID: " . $order->getId() . "<br>";
+    echo "Order Increment ID: " . $order->getIncrementId() . "<br>";
+    $customerName = $order->getCustomerFirstname() . ' ' . $order->getCustomerLastname();
+    echo "Customer Name: " . $customerName . "<br>";
+}
+echo "<hr>";
+?>

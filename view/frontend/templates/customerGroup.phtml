@@ -1,0 +1,16 @@
+<?php
+
+/** @var \Perspective\TutorialEntity\ViewModel\CustomerGroup $viewModel */
+$viewCustomerModel = $block->getData('viewModel');
+$customerGroups = $viewCustomerModel->getCustomerGroups();
+?>
+
+<?php
+echo "<hr>Customer Groups:<br>";
+
+foreach ($customerGroups as $group) {
+    echo "Value: " . $group['value'] . ", Label: " . $group['label'] . "<br>";
+}
+echo "<hr>";
+
+?>

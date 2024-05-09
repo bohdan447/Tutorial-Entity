@@ -1,0 +1,15 @@
+<?php
+/** @var \Perspective\TutorialEntity\ViewModel\CustomerList $viewModel */
+$customerCollection = $block->getData('viewModel')->getCustomers();
+
+?>
+    <?php foreach ($customerCollection as $customer): ?>
+        <div>
+            <hr/>
+            <?= __('First Name: %1', $customer->getFirstname()) ?><br/>
+            <?= __('Last Name: %1', $customer->getLastname()) ?><br/>
+            <?= __('Email: %1', $customer->getEmail()) ?>
+
+        </div>
+    <?php endforeach; ?>
+

@@ -1,0 +1,14 @@
+<?php
+/** @var \Perspective\TutorialEntity\ViewModel\Payments $block */
+$paymentsViewModel = $block->getData('viewModel');
+?>
+
+<?php if ($paymentsViewModel !== null): ?>
+    <?php $paymentMethods = $paymentsViewModel->getAllPaymentMethods(); ?>
+    <?php if (!empty($paymentMethods)) : ?>
+        <?php foreach ($paymentMethods as $key => $paymentMethod): ?>
+            <hr><div> Title: <?= $paymentMethod ?></div>
+            <div>Code: <?= $key ?></div>
+        <?php endforeach;  ?>
+    <?php endif; ?>
+<?php endif; ?>

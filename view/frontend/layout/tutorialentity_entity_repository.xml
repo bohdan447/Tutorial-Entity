@@ -15,7 +15,6 @@
             <block class="Magento\Framework\View\Element\Template" name="ProductInfo" template="Perspective_TutorialEntity::InfoProduct.phtml">
                 <arguments>
                     <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\ProductInfo</argument>
-                    <argument name="customerViewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\CustomerList</argument>
                 </arguments>
             </block>
             <block class="Magento\Framework\View\Element\Template" name="category_list" template="Perspective_TutorialEntity::AllCategory.phtml">
@@ -23,7 +22,42 @@
                     <argument name="view_model" xsi:type="object">Perspective\TutorialEntity\ViewModel\Categories</argument>
                 </arguments>
             </block>
-        </referenceContainer>
+            <block class="Magento\Framework\View\Element\Template" name="Stock" template="Perspective_TutorialEntity::list.phtml">
+                <arguments>
+                    <argument name="Qty" xsi:type="object">Perspective\TutorialEntity\ViewModel\Stock</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="img" template="Perspective_TutorialEntity::images.phtml">
+                <arguments>
+                    <argument name="img" xsi:type="object">Perspective\TutorialEntity\ViewModel\Images</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="pay" template="Perspective_TutorialEntity::payments.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\Payment</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="ship" template="Perspective_TutorialEntity::shipping.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\ShippingMethods</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="customer" template="Perspective_TutorialEntity::allCastomers.phtml" after="ship">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\CustomerList</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="customerGroup" template="Perspective_TutorialEntity::customerGroup.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\CustomerGroup</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Template" name="orders" template="Perspective_TutorialEntity::orders.phtml">
+                <arguments>
+                    <argument name="viewModel" xsi:type="object">Perspective\TutorialEntity\ViewModel\Orders</argument>
+                </arguments>
+            </block>
 
+        </referenceContainer>
     </body>
 </page>
